@@ -1,0 +1,243 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e6f0ff; /* Light blue background */
+    color: #0d1a80; /* Dark blue text */
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Wrapper: max-width added for better readability on big screens */
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    padding: 30px 60px; /* generous horizontal padding */
+    background: #fff; /* Pure white card */
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(13, 26, 128, 0.15);
+    box-sizing: border-box;
+    margin: 0 auto; /* center horizontally */
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #0047b3; /* Bright blue */
+}
+
+header p {
+    font-size: 1.2em;
+    color: #3366cc;
+}
+
+/* Options Section */
+.options-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Flex container for the options form */
+#optionsForm {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Align label baseline with inputs */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Label styling */
+#optionsForm label {
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.1em;
+    /* Adjust margin and line-height to align better */
+    line-height: 1.2;
+    margin-bottom: 3px;
+}
+
+/* Equal width input and button */
+#optionsForm input[type="number"],
+#optionsForm button.submit-btn {
+    width: 150px;  /* Equal width */
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 2px solid #66a3ff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    height: 42px; /* fixed height for alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#optionsForm input[type="number"]:focus {
+    border-color: #0047b3;
+    outline: none;
+}
+
+/* Button styling */
+#optionsForm button.submit-btn {
+    background: #0047b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    line-height: normal;
+}
+
+#optionsForm button.submit-btn:hover {
+    background: #003366;
+}
+
+/* Input Section Titles */
+.input-section h2,
+.meal-inputs-section h2,
+.timetable-section h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2em;
+    color: #003366;
+}
+
+/* Meal group layout: 3 columns in one row */
+.meal-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Fieldset and legend */
+fieldset {
+    border: 2px solid #66a3ff;
+    border-radius: 12px;
+    padding: 25px 20px 30px;
+    background-color: #e6f0ff;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 15px;
+    color: #0047b3;
+    font-size: 1.3em;
+}
+
+/* Text inputs for meal options */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px solid #66a3ff;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #0047b3;
+    outline: none;
+}
+
+/* Generate Meal Plan button */
+button.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #0047b3;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+button.submit-btn:hover {
+    background: #003366;
+}
+
+/* Table styles */
+.timetable-section {
+    margin-top: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fbff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 71, 179, 0.2);
+}
+
+thead th {
+    background-color: #0047b3;
+    color: white;
+    padding: 18px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #d0d9ff;
+    text-align: center;
+    color: #003366;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d6e1ff;
+}
+
+tbody tr:hover {
+    background-color: #a3b9ff;
+    color: white;
+    font-weight: 700;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 900px) {
+    .meal-group {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .wrapper {
+        padding: 20px 15px;
+    }
+
+    /* Stack options form vertically on small screens */
+    #optionsForm {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch; /* stretch children for full width */
+    }
+
+    #optionsForm label {
+        margin-bottom: 5px;
+    }
+
+    #optionsForm input[type="number"],
+    #optionsForm button.submit-btn {
+        width: 100%;
+        height: 45px;
+    }
+}
